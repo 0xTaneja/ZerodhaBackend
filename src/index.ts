@@ -53,7 +53,7 @@ app.post("/order",(req,res)=>{
     const remainingQuantity = fillOrder(side,quantity,price,userId);
 
     if(remainingQuantity == 0){
-        res.json({filledquantity:quantity});
+        res.json({filledQuantity:quantity});
         return;
     }
     if(side == "BID")
@@ -174,3 +174,4 @@ function flipBalance(userId1:string,userId2:string,price:number,quantity:number)
 app.listen(3000,()=>{
     console.log("Server running on port 3000");
 })
+export {app}
